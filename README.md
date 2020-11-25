@@ -1,6 +1,6 @@
 # Comparison of DBMs, VAEs, GANs and multivariate imputation as generative models for genetic variant data
 
-This repository contains an experiment that compares deep Boltzmann machines (DBMs), variational autoencoders (VAEs), generative adversarial networks (GANs) and multivariate imputation by chained equations (MICE) on data sets of genetic variants from the 1000 genomes project.
+This repository contains an experiment that compares deep Boltzmann machines (DBMs), variational autoencoders (VAEs), generative adversarial networks (GANs) and multivariate imputation by chained equations (MICE) on data sets of genetic variants from the 1000 Genomes Project.
 
 The code in this repository has been adapted from the article
 
