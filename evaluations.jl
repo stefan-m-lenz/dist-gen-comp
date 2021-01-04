@@ -158,6 +158,9 @@ function fitgenerate(
                      learningrate = 0.002),
          samplefun = model -> VAEs.samples(model, ngensamples)))
 
+   elseif modeldefinition["model"] == "im"
+      return evaluation(evalim(modeldefinition, xpart, xtest))
+
    else
       error("unknown model")
    end
@@ -187,6 +190,17 @@ function evalmice(modeldefinition, xpart, xtest)
       oddsdeltatrain = oddsdelta(xpart, xgen)
    catch ex
    end
+   model_evaluation, xgen, oddsdeltatrain
+end
+
+
+function evalim(modeldefinition, xpart, xtest)
+   ngensamples = size(xpart, 1)
+   # odds ratio of independent variables is 1
+   varmeans = mean(xpart, dims = 1)
+   xgen = float.(rand(Float64, size(xpart)) .< varmeans)
+   model_evaluation = oddsdelta(xgen, xtest)
+   oddsdeltatrain = oddsdelta(xpart, xgen)
    model_evaluation, xgen, oddsdeltatrain
 end
 

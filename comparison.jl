@@ -36,6 +36,7 @@ modeldefinitions = [
       map(i -> Dict("model" => "dbm", "epochs" => i), 50:20:2000);
       Dict("model" => "vae", "epochs" => 50:20:2000);
       Dict("model" => "gan", "epochs" => 50:20:2000);
+      Dict("model" => "im");
       ]
 
 # Run the experiment
