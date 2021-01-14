@@ -1,5 +1,6 @@
 [deps]
 BoltzmannMachines = "4f8fbe5d-35a6-506b-99b3-b5866748635b"
+CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 CUDAdrv = "c5f51814-7f29-56b8-a69c-e4d8f6be1fde"
 CuArrays = "3a865a2d-5b23-5a0f-bc46-62713ec82fae"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"

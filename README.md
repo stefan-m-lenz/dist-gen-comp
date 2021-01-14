@@ -15,9 +15,14 @@ The code in this repository has been adapted from the article
 
 The original data is from https://mathgen.stats.ox.ac.uk/impute/1000GP_Phase3.html.
 The preprocessed data for the experiment can be found in the [data](data) folder.
-Running the Julia script [`comparison.jl`](comparison.jl) produces the file [`result.tsv`](result.tsv).
-This took about 10 hours on a cluster of three machines with 8, 12, and 20 cores with clock speeds of about 3 GHz and at least 8 GB RAM per core.
-The R script [`comparisonplot.r`](comparisonplot.r) can be used to reproduce figures 6 and 7 in [1] from [`result.tsv`](result.tsv).
+
+Running the Julia script [`comparison_odds.jl`](comparison_odds.jl) produces the file [`results_odds.tsv`](results_odds.tsv).
+This took about 25 hours on a cluster of three machines with 8, 12, and 28 cores with clock speeds of about 3 GHz and at least 8 GB RAM per core.
+The R script [`comparisonplot_odds.r`](comparisonplot_odds.r) can be used to reproduce figures 6 and 7 in [1] from [`results_odds.tsv`](results_odds.tsv).
+
+Running the Julia script [`comparison_membership.jl`](comparison_membership.jl) performs a membership attack and produces the file [`results_membership.tsv`](results_membership.tsv).
+Running the script took 11 minutes using the same machines.
+This script uses the [`results_odds.tsv`](results_odds.tsv) as input and evaluates only the models with the best scores concering the odds ratio distances therein. The R script [`comparisonplot_membership.r`](comparisonplot_membership.r) can be used to reproduce figures 8 and 9 in [1] from the output file.
 
 The Julia code runs with Julia version 1.5.
 The used packages are defined via the files [`Manifest.toml`](Manifest.toml) and [`Project.toml`](Project.toml).
