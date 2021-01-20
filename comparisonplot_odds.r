@@ -22,7 +22,7 @@ getQuantiles <- function(plotdata, col) {
   })
   ret <- Reduce(rbind, ret)
   rownames(ret) <- c(1,2,5,20)
-  ret
+  write.table(t(ret), file = paste0("quantiles_", col, ".tsv"), sep = "\t")
 }
 
 
